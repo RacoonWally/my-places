@@ -1,0 +1,14 @@
+{
+  "name": "shared-types",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "types": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
