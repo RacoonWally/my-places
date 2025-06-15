@@ -32,13 +32,13 @@ router.get('/:id', async (req, res): Promise<void> => {
     const { id } = req.params;
 
     try {
-        const tag: Tag | null = await prisma.tag.findFirst({ where: { id }})
+        const tag: Tag | null = await prisma.tag.findFirst({ where: { id } });
 
-        res.json(tag)
+        res.json(tag);
     } catch (error) {
         res.status(400).json({ error: 'Ошибка при получении тега' });
     }
-})
+});
 
 // Patch /tags/:id — Обновить тег
 router.patch('/:id', async (req, res): Promise<void> => {
@@ -49,13 +49,13 @@ router.patch('/:id', async (req, res): Promise<void> => {
         await prisma.tag.update({
             where: { id },
             data: updateParams,
-        })
+        });
 
         res.status(204).send();
     } catch (error) {
         res.status(400).json({ error: 'Ошибка при обновлении тега' });
     }
-})
+});
 
 // DELETE /tags/:id — Удалить тег
 router.delete('/:id', async (req, res): Promise<void> => {
@@ -68,7 +68,6 @@ router.delete('/:id', async (req, res): Promise<void> => {
     } catch (error) {
         res.status(400).json({ error: 'Ошибка при удалении тега' });
     }
-})
-
+});
 
 export default router;
